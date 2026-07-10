@@ -346,12 +346,13 @@ elif page == "👥 Customer Analytics":
 
         # RFM scatter
         st.markdown('<div class="section-title">RFM Scatter — Recency vs Frequency</div>', unsafe_allow_html=True)
-        fig3 = px.scatter(
-            rfm, x="recency", y="frequency", size="monetary",
-            color="Segment", color_discrete_map=seg_colors,
-            hover_data=["customer_id","monetary"],
-            size_max=30, opacity=0.7
-        )
+        fig3 = go.Figure()
+        for seg, grp in rfm.groupby("Segment"):
+            fig3.add_trace(go.Scatter(
+                x=grp["recency"], y=grp["frequency"],
+                mode="markers", name=seg,
+                marker=dict(color=seg_colors.get(seg,"gray"), size=6, opacity=0.7)
+            ))
         fig3.update_layout(height=420, paper_bgcolor="rgba(0,0,0,0)",
                            plot_bgcolor="rgba(248,250,252,1)",
                            font_color="#1e293b", margin=dict(t=20,b=20,l=10,r=10),
