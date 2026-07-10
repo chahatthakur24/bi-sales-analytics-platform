@@ -37,7 +37,7 @@ An end-to-end Business Intelligence platform analyzing **5,000+ sales orders** a
 
 ## 🚀 Live Demo
 
-**https://bi-sales-analytics-platform-hz929ans7e4oe86hfjmwpg.streamlit.app/(#)** ← Add your Streamlit Cloud URL here after deployment
+**https://bi-sales-analytics-platform-hz929ans7e4oe86hfjmwpg.streamlit.app/** ← Add your Streamlit Cloud URL here after deployment
 
 **5 Dashboard Pages:**
 - 🏠 **Executive Summary** — KPIs, revenue trend, region breakdown
